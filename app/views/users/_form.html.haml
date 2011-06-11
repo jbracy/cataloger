@@ -1,0 +1,37 @@
+%table.user_form
+  %tr
+    %td= form.label(:username)
+    %td= form.text_field :username
+  - if form.object.errors[:username]
+    %tr.error_row
+      %td{:colspan => 2}= form.object.errors[:username].to_a.join(" and ")
+  %tr
+    %td= form.label(:email)
+    %td= form.text_field :email
+    - if form.object.errors[:email]
+      %tr.error_row
+        %td{:colspan => 2}= form.object.errors[:email].to_a.join(" and ")
+  %tr
+    %td= form.label(:password)
+    %td= form.password_field(:password)
+    - if form.object.errors[:password]
+      %tr.error_row
+        %td{:colspan => 2}= form.object.errors[:password].to_a.join(" and ")
+  %tr
+    %td= form.label(:password_confirmation)
+    %td= form.password_field :password_confirmation
+    - if form.object.errors[:password_confirmation]
+      %tr.error_row
+        %td{:colspan => 2}= form.object.errors[:password_confirmation].to_a.join(" and ")
+  - if form.object.new_record?
+    %tr      
+      %td
+        = form.check_box :terms_of_service
+        = form.label(:terms_of_service)
+      %td{:style => 'text-align: right;'}= form.submit
+      - if form.object.errors[:password_confirmation]
+        %tr.error_row
+          %td{:colspan => 2}= form.object.errors[:terms_of_service].to_a.join(" and ")
+  - else
+    %tr      
+      %td{:colspan => 2, :style => 'text-align: right;'}= form.submit

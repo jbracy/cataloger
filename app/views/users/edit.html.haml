@@ -1,0 +1,6 @@
+%header
+  %h1 Edit Account
+
+= form_for @user, :url => account_path do |f|
+  = error_messages_for(f.object)
+  = render :partial => 'form', :object => f

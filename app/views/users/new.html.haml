@@ -1,0 +1,6 @@
+%header
+  %h1 Sign up
+  
+= form_for @user, :url => account_path do |f|
+  = error_messages_for(f.object, :list_messages => false)
+  = render :partial => 'form', :object => f

@@ -1,4 +1,5 @@
 class CreateUsers < ActiveRecord::Migration
+  
   def change
     create_table :users do |t|
       t.string :username,             :null => false
@@ -11,5 +12,12 @@ class CreateUsers < ActiveRecord::Migration
       
       t.timestamps
     end
+    
+    add_index :users, :email, :unique => true
+    add_index :users, :username, :unique => true
+    add_index :users, :single_access_token, :unique => true
+    add_index :users, :persistence_token, :unique => true
+    add_index :users, :perishable_token, :unique => true
   end
+  
 end

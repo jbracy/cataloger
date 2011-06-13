@@ -11,7 +11,11 @@ class ActiveSupport::TestCase
   # fixtures :all
   
   # Add more helper methods to be used by all tests here...
-  # Add more helper methods to be used by all tests here...
+  
+  def logout
+    UserSession.find.destroy
+  end
+  
   def assert_layout(layout)
     assert_equal layout, @response.layout
   end

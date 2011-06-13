@@ -12,6 +12,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'authlogic'
 gem 'squeel'
+# gem 'will_paginate'
 
 group :development do
   gem 'wirble'

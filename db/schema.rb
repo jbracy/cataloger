@@ -10,16 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612180618) do
+ActiveRecord::Schema.define(:version => 20110613212528) do
 
   create_table "catalogs", :force => true do |t|
-    t.integer  "user_id",    :null => false
+    t.integer  "user_id"
     t.string   "title",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "catalogs", ["user_id"], :name => "index_catalogs_on_user_id"
+
+  create_table "products", :force => true do |t|
+    t.integer  "catalog_id",         :null => false
+    t.string   "sku"
+    t.string   "name"
+    t.integer  "price"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "products", ["catalog_id", "id"], :name => "index_products_on_catalog_id_and_id", :unique => true
+  add_index "products", ["catalog_id", "sku"], :name => "index_products_on_catalog_id_and_sku", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username",            :null => false

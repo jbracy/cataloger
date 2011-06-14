@@ -9,6 +9,8 @@ Cataloger::Application.routes.draw do
   resource :user_session, :only => [:new, :create, :destroy]
   resource :account, :controller => 'users', :except => [:index, :destroy]
   
-  resources :catalogs
+  resources :catalogs do
+    resources :products
+  end
   
 end

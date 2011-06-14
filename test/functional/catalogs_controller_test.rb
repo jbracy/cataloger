@@ -104,7 +104,7 @@ class CatalogsControllerTest < ActionController::TestCase
     assert_routing '/catalogs/1', path_with_action('show', :id => '1')
     assert_recognizes path_with_action('show', :id => '1'), '/catalogs/1'
   end
-
+  
   test 'should route to create' do
     assert_routing({ :method => :post, :path => '/catalogs' }, path_with_action('create'))
     assert_recognizes(path_with_action('create'), { :method => :post, :path => '/catalogs' })
@@ -114,7 +114,7 @@ class CatalogsControllerTest < ActionController::TestCase
     assert_routing '/catalogs/1/edit', path_with_action('edit', :id => '1')
     assert_recognizes path_with_action('edit', :id => '1'), 'catalogs/1/edit'
   end
-
+  
   test 'should route to update' do
     assert_routing({ :method => :put, :path => '/catalogs/1' }, path_with_action('update', :id => '1'))
     assert_recognizes(path_with_action('update', :id => '1'), { :method => :put, :path => '/catalogs/1' })

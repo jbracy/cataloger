@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20110614025432) do
 
   create_table "catalogs", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",    :null => false
     t.string   "title",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(:version => 20110614025432) do
   add_index "categorizations", ["category_id", "product_id"], :name => "index_categorizations_on_category_id_and_product_id", :unique => true
 
   create_table "products", :force => true do |t|
-    t.integer  "catalog_id",         :null => false
+    t.integer  "catalog_id",                                       :null => false
     t.string   "sku"
     t.string   "name"
-    t.integer  "price"
+    t.decimal  "price",              :precision => 8, :scale => 2
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

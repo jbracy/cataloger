@@ -1,0 +1,9 @@
+%header
+  %h1 Catalogs
+  %ul
+    %li= link_to "New Catalog", new_catalog_path
+
+%ul
+  - @catalogs.each do |catalog|
+    %li
+      = link_to catalog.title, catalog_path(catalog)

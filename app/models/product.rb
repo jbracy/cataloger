@@ -2,10 +2,10 @@ class Product < ActiveRecord::Base
   
   belongs_to :catalog, :inverse_of => :products
   has_many :categorizations, :inverse_of => :product
-  has_many :categories, :through => :categorizations, :inverse_of => :product
+  has_many :categories, :through => :categorizations, :inverse_of => :products
   
   has_attached_file :image, :styles => {
-    :large => ["1024x1024>", :png],
+    :large => ["1024x1024>", :jpg],
     :medium => ["300x300>", :jpg],
     :thumb => ['100x100>', :jpg] }
   

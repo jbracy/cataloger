@@ -91,7 +91,7 @@ class CatalogsControllerTest < ActionController::TestCase
   # = Routing Tests ===========================================================
   
   test 'should route to index' do
-    assert_routing '/catalogs', path_with_action('index')
+    assert_routing '/', path_with_action('index')
     assert_recognizes path_with_action('index'), '/catalogs'
   end
   

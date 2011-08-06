@@ -86,15 +86,18 @@ class UsersControllerTest < ActionController::TestCase
   end
   
   test 'should route to show' do
-    assert_routing '/', path_with_action('show')
+    assert_routing '/account', path_with_action('show')
+    assert_recognizes path_with_action('show'), '/account'
   end
   
   test 'should route to edit' do
     assert_routing '/account/edit', path_with_action('edit')
+    assert_recognizes path_with_action('edit'), '/account/edit'
   end
   
   test 'should route to update' do
     assert_routing({ :method => :put, :path => '/account'}, path_with_action('update'))
+    assert_recognizes(path_with_action('update'), { :method => :put, :path => '/account'})
   end
   
   test 'should route to create' do

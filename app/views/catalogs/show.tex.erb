@@ -1,0 +1,41 @@
+\documentclass[11pt,titlepage]{article}
+\usepackage{geometry,graphicx,caption,float,epstopdf}
+\usepackage[cm]{fullpage}
+
+\pagestyle{plain}
+\geometry{letterpaper}
+\setcounter{secnumdepth}{-1}
+\setcounter{topnumber}{10}
+\setcounter{bottomnumber}{10}
+\setcounter{totalnumber}{20}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\captionsetup{format=default,justification=centering,labelformat=empty,font={footnotesize},margin=0px}
+
+\title{<%= @catalog.title %>}
+
+\date{}
+
+\begin{document}
+  \begin{titlepage}
+    \maketitle
+  \end{titlepage}
+
+  <%- @catalog.categories.each do |category| %>
+  \section{<%= category.name %>}
+    <%- category.products.in_groups_of(5) do |group| %>
+      \begin{figure}[H]
+        \centering
+        <%- group.each_with_index do |product, i| %>
+          <%- next if product.nil? %>
+          \begin{minipage}[t]{0.15\linewidth}
+            \centering
+            \includegraphics[keepaspectratio,width=\linewidth,height=0.14\paperheight]{<%= product.image.url(:large) %>}
+            \caption{<%= product.name %> <%= number_to_currency(product.price / 100).gsub("$", "\\$") %>}
+          \end{minipage}%
+          <%- if i != 6 %>\hfill%<% end %>
+        <%- end %>
+      \end{figure}
+    <%- end %>
+  <%- end %>
+
+\end{document}

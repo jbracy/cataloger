@@ -2,7 +2,7 @@ Cataloger::Application.routes.draw do
   
   resources :categories
 
-  root :to => 'users#show'
+  root :to => 'catalogs#index'
   
   match 'login' => 'user_sessions#new', :via => :get
   match 'logout' => 'user_sessions#destroy', :via => [:get, :delete]

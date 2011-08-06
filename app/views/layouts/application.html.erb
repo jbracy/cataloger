@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cataloger</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Cataloger</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
+    
+    <header id="header" class="container_12">
+      <h1 class="grid_6">Cataloger</h1>
+      <nav id="navigation" class="grid_6">
+        <%= link_to 'Login', '/login' %>
+        <%= link_to 'Sign Up', '/signup' %>
+      </nav>
+    </header>
+    
+    <div id="content" class="container_12">
+      <%= yield %>
+    </div>
+    
+  </body>
 </html>

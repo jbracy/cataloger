@@ -5,3 +5,19 @@
  *= require_self
  *= require_tree . 
 */
+
+#header {
+  border-top: 3px solid #222;
+}
+
+#navigation {
+  margin: 17px 10px;
+  text-align: right;
+  
+  a { 
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+  }
+  a:hover { color: #222; }
+}

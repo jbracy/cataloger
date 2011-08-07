@@ -8,7 +8,7 @@ class UserSessionsControllerTest < ActionController::TestCase
                                      :password => user.password }
     assert user_session = UserSession.find
     assert_equal user, user_session.user
-    assert_redirected_to account_url
+    assert_redirected_to root_url
   end
   
   test 'should destroy user session' do

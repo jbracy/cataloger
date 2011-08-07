@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
     
     if @user_session.save
       flash[:notice] = "Login successful."
-      redirect_to account_path
+      redirect_to root_path
     else
       render :action => :new
     end

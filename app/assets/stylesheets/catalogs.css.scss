@@ -3,3 +3,51 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+body.catalogs {
+  
+  .categories {
+    -moz-box-shadow: 1px 1px 2px 1px #BBB;
+    -webkit-box-shadow: 1px 1px 2px 1px #BBB;
+    box-shadow: 1px 1px 2px 1px #BBB;
+    padding: 6px;
+    
+    h3 {
+      background: #003153;
+      color: #FEFEFE;
+      padding: 6px;
+      -moz-box-shadow: 1px 1px 1px #AAA;
+      -webkit-box-shadow: 1px 1px 1px #AAA;
+      box-shadow: 1px 1px 2px #AAA;
+      position: relative;
+      margin-top: 0;
+      margin-left: -15px;
+      
+      
+      .arrow {  
+        width: 0;
+        height: 0;
+        line-height: 0;
+        border-left: 9px solid transparent;
+        border-top: 6px solid #102B3E;
+        top: 100%;
+        left: 0;
+        position: absolute;
+      }
+    }
+    
+    ul { list-style: none; padding: 0; font-size: 14px; }
+    ul li { padding: 6px; }
+  }
+  
+  .catalog {
+    -moz-box-shadow: 1px 1px 2px 2px #AAA;
+    -webkit-box-shadow: 1px 1px 2px 2px #AAA;
+    box-shadow: 1px 1px 2px 2px #AAA;
+    padding: 6px;
+    min-height: 400px;
+    
+    h1 { text-align: center; } 
+  }
+  
+}

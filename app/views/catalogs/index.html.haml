@@ -1,9 +1,10 @@
-%header
-  %h1 Catalogs
-  %ul
-    %li= link_to "New Catalog", new_catalog_path
-
-%ul
-  - @catalogs.each do |catalog|
-    %li
-      = link_to catalog.title, catalog_path(catalog)
+.container_12
+  %header.grid_12
+    %h1 Catalogs
+    %ul
+      %li= link_to "New Catalog", new_catalog_path
+    
+  %ul.grid_12
+    - @catalogs.each do |catalog|
+      %li
+        = link_to catalog.title, catalog_path(catalog)

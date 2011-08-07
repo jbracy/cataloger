@@ -1,6 +1,10 @@
-%header
-  %h1 Sign up
+.container_12
+  .grid_12
+    = form_for @user, :url => account_path do |f|
+      %h1 Sign Up<span class="arrow"></span>
+      = error_messages_for(f.object, :list_messages => false)
+      = render :partial => 'form', :object => f
+
+
   
-= form_for @user, :url => account_path do |f|
-  = error_messages_for(f.object, :list_messages => false)
-  = render :partial => 'form', :object => f
+  

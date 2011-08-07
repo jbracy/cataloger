@@ -25,13 +25,13 @@
         %td{:colspan => 2}= form.object.errors[:password_confirmation].to_a.join(" and ")
   - if form.object.new_record?
     %tr      
-      %td
+      %td{:colspan => 2}
+        %div{:style => "text-align: right; float: right;"}= form.submit "Submit"
         = form.check_box :terms_of_service
         = form.label(:terms_of_service)
-      %td{:style => 'text-align: right;'}= form.submit
-      - if form.object.errors[:password_confirmation]
+      - if form.object.errors[:terms_of_service]
         %tr.error_row
           %td{:colspan => 2}= form.object.errors[:terms_of_service].to_a.join(" and ")
   - else
     %tr      
-      %td{:colspan => 2, :style => 'text-align: right;'}= form.submit
+      %td{:colspan => 2, :style => 'text-align: right;'}= form.submit "Submit"

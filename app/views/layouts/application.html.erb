@@ -12,12 +12,17 @@
     <header id="header" class="container_12">
       <h1 class="grid_6">Cataloger</h1>
       <nav id="navigation" class="grid_6">
-        <%= link_to 'Login', '/login' %>
-        <%= link_to 'Sign Up', '/signup' %>
+        <% if current_user %>
+          <%= link_to_unless_current "Account", account_path %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to 'Login', '/login' %>
+          <%= link_to 'Sign Up', '/signup' %>
+        <% end %>
       </nav>
     </header>
     
-    <div id="content" class="container_12">
+    <div id="content">
       <%= yield %>
     </div>
     

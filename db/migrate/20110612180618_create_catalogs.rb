@@ -9,6 +9,7 @@ class CreateCatalogs < ActiveRecord::Migration
     end
     
     add_index :catalogs, :user_id
+    add_index :catalogs, :title, :unique => true
   end
   
 end

@@ -1,0 +1,16 @@
+%table.catalog_form
+  %tr
+    %td= form.label(:title)
+    %td= form.text_field :title
+  - if form.object.errors[:title]
+    %tr.error_row
+      %td{:colspan => 2}= form.object.errors[:catalog].to_a.join(" and ")
+
+  - if form.object.new_record?
+    %tr      
+      %td{:colspan => 2}
+        %div{:style => "text-align: right; "}= form.submit "Submit"
+
+  -else
+    %tr
+      %td{:colspan => 2, :style => 'text-align: right;'}= form.submit "Submit"

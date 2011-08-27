@@ -26,7 +26,7 @@ class CatalogsController < ApplicationController
       render :action => :new
     end
   end
-    
+
   def update
     @catalog = current_user.catalogs.find(params[:id])
     

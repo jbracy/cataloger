@@ -1,13 +1,15 @@
 .container_12
   .grid_3
     .categories
-      %h3 Categories<span class="arrow"></span>
+      %h3
+        Categories<span class="arrow"></span>
+        = link_to "Edit", edit_category_path(@catalog)
       %ul
         - @catalog.categories.each do |category|
-          %li= category.name
+          %li
+            =category.name
+
   .grid_9
     .catalog
       %h1= @catalog.title
       .products
-      
-        

@@ -23,6 +23,11 @@ body.catalogs {
       margin-top: 0;
       margin-left: -15px;
       
+      a {
+        float: right;
+        color: #FEFEFE;
+        text-decoration: none;
+       }
       
       .arrow {  
         width: 0;
@@ -36,8 +41,19 @@ body.catalogs {
       }
     }
     
-    ul { list-style: none; padding: 0; font-size: 14px; }
+    ul { 
+     list-style: none; padding: 0; font-size: 14px;
+     
+     a {
+      float: right;
+      text-decoration: none;
+      color: #8B0000;
+     }
+    }
+
     ul li { padding: 6px; }
+
+    .button_to {text-align: right; }
   }
   
   .catalog {

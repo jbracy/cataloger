@@ -40,6 +40,11 @@ class ProductsController < ApplicationController
     end
   end
   
+  def destroy
+     @product = @catalog.products.find(params[:id]).destroy
+     redirect_to :action => :index
+  end
+  
   protected
   
   def set_catalog

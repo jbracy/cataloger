@@ -3,4 +3,4 @@
     = form_for @catalog, :url => catalogs_path do |f|
       %h1 Enter Catalog Title <span class="arrow"></span>
       = error_messages_for(f.object, :list_messages => false)
-      = render :partial => 'form', :object => f
+      = render :partial => 'form_new', :object => f

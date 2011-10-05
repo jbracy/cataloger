@@ -3,3 +3,94 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+body.products {
+
+  .products {
+    -moz-box-shadow: 1px 1px 2px 1px #BBB;
+    -webkit-box-shadow: 1px 1px 2px 1px #BBB;
+    box-shadow: 1px 1px 2px 1px #BBB;
+    padding: 6px;
+    
+    h3 {
+      background: #003153;
+      color: #FEFEFE;
+      padding: 6px;
+      -moz-box-shadow: 1px 1px 1px #AAA;
+      -webkit-box-shadow: 1px 1px 1px #AAA;
+      box-shadow: 1px 1px 2px #AAA;
+      position: relative;
+      margin-top: 0;
+      margin-left: -15px;
+
+      a {
+        float: right;
+        text-decoration: none;
+        color: #FEFEFE;
+      }
+    }
+    
+    ul { 
+      list-style: none; padding: 0; font-size: 14px;
+      a {
+        float: right;
+        padding-left: 1em;
+        text-decoration: none;
+        color: #222;
+      }
+
+      a:hover{color: #8B0000}
+
+      li { padding: 4px; 
+        a {
+          float: right;
+          padding-left: 1em;
+          text-decoration: none;
+          color: #222;
+        }
+      }
+    }
+  }
+
+/*new product page*/
+  #new_product {
+    float: left;
+    margin: auto;
+    width: 420px;
+    -moz-box-shadow: 1px 1px 2px 1px #888;
+    -webkit-box-shadow: 1px 1px 2px 1px #888;
+    box-shadow: 1px 1px 2px 1px #888;
+    padding: 6px;
+    padding-left: 1em;
+
+    h1 { 
+      background: #003153;
+      color: #FEFEFE;
+      padding: 6px;
+      margin-left: -20px;
+      margin-top: 0;
+      position: relative;
+      -moz-box-shadow: 1px 1px 1px #AAA;
+      -webkit-box-shadow: 1px 1px 1px #AAA;
+      box-shadow: 1px 1px 2px #AAA;
+      color: #FFF;
+    }
+
+	.arrow {  
+      width: 0;
+      height: 0;
+      line-height: 0;
+      border-left: 14px solid transparent;
+      border-top: 6px solid #102B3E;
+      top: 100%;
+      left: 0;
+      position: absolute;
+    }
+
+	table { margin: auto; }
+    td { padding: 6px; }
+    label { font-weight: bold; }
+    label.remember_me { font-weight: normal; }
+  }
+
+}

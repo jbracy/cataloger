@@ -1,6 +1,4 @@
 Cataloger::Application.routes.draw do
-  
-  resources :categories
 
   root :to => 'catalogs#index'
   
@@ -13,6 +11,7 @@ Cataloger::Application.routes.draw do
   
   resources :catalogs do
     resources :products
+    resources :categories, :controller => 'catalog/categories'
   end
-  
+    
 end

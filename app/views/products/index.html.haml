@@ -1,0 +1,14 @@
+.container_12
+  .grid_4
+    .products
+      %h3 
+        Edit Products<span class="arrow"></span>
+        = link_to "Catalog", catalog_path(@catalog)
+      %ul
+        - @catalog.products.each do |product|
+          %li
+            =product.name
+            =link_to "Edit", edit_catalog_product_path(@catalog, product)
+            =link_to "Delete", catalog_product_path(@catalog, product), :method => :delete, :confirm => "Are you sure?"
+
+        = link_to "Add", new_catalog_product_path

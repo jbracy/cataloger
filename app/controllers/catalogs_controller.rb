@@ -40,7 +40,7 @@ class CatalogsController < ApplicationController
   
   def destroy
     current_user.catalogs.find(params[:id]).destroy
-    redirect_to :action => index
+    redirect_to :action => :index
   end
   
 end

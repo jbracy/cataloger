@@ -1,10 +1,14 @@
 .container_12
-  %header.grid_12
-    %h1 Catalogs
-    %ul
-      %li= link_to "New Catalog", new_catalog_path
+  .catalogs
+    %header.grid_12
+      %h1 Catalogs
     
-  %ul.grid_12
-    - @catalogs.each do |catalog|
-      %li
-        = link_to catalog.title, catalog_path(catalog)
+      %ul
+        - @catalogs.each do |catalog|
+          %li
+            = link_to catalog.title, catalog_path(catalog)
+            = link_to "Edit", catalog_products_path(catalog)
+            = link_to "Delete", catalog_path(catalog), :method => :delete, :confirm => "Are you sure?"
+    
+      %ul
+        %li= link_to "New Catalog", new_catalog_path

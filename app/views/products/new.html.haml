@@ -1,0 +1,6 @@
+.container_12
+  .grid_12
+    = form_for @product, :url => catalog_products_path do |f|
+      %h1 Enter Product Info<span class="arrow"></span>
+      = error_messages_for(f.object, :list_messages => false)
+      = render :partial => 'form_new', :object => f

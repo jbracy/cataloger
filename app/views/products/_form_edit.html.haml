@@ -1,0 +1,8 @@
+%table.product_form_edit
+  %tr
+    %td= form_edit.label(:product)
+    %td= form_edit.text_field :name
+
+  - if form_edit.object.errors[:product]
+    %tr.error_row
+      %td{:colspan => 2}= form_edit.object.errors[:product].to_a.join(" and ")

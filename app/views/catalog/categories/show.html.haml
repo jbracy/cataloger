@@ -1,0 +1,9 @@
+.container_12
+  .grid_3
+    .categories
+      %h3
+        Categories<span class="arrow"></span>
+      %ul
+        - @catalog.categories.each do |category|
+          %li
+            =category.name

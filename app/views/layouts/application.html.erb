@@ -10,7 +10,7 @@
   <body class="<%= controller_name %> <%= action_name %>">
     
     <header id="header" class="container_12">
-      <h1 class="grid_6">Cataloger</h1>
+      <h1 class="grid_6"><a href="/">Cataloger</a></h1>
       <nav id="navigation" class="grid_6">
         <% if current_user %>
           <%= link_to_unless_current "Account", account_path %>
@@ -20,6 +20,9 @@
           <%= link_to 'Sign Up', '/signup' %>
         <% end %>
       </nav>
+      <% if @catalog != nil%>
+        <h1><%=@catalog.title%></h1>
+	  <%end%>
     </header>
     
     <div id="content">

@@ -16,17 +16,18 @@ ActiveRecord::Schema.define(:version => 20110614025432) do
   create_table "catalogs", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.string   "title",      :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
+  add_index "catalogs", ["title"], :name => "index_catalogs_on_title", :unique => true
   add_index "catalogs", ["user_id"], :name => "index_catalogs_on_user_id"
 
   create_table "categories", :force => true do |t|
     t.integer  "catalog_id", :null => false
     t.string   "name",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "categories", ["catalog_id", "id"], :name => "index_categories_on_catalog_id_and_id", :unique => true
@@ -35,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20110614025432) do
   create_table "categorizations", :force => true do |t|
     t.integer  "category_id", :null => false
     t.integer  "product_id",  :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "categorizations", ["category_id", "product_id"], :name => "index_categorizations_on_category_id_and_product_id", :unique => true
@@ -49,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20110614025432) do
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
   end
 
   add_index "products", ["catalog_id", "id"], :name => "index_products_on_catalog_id_and_id", :unique => true
@@ -64,8 +65,8 @@ ActiveRecord::Schema.define(:version => 20110614025432) do
     t.string   "persistence_token",   :null => false
     t.string   "single_access_token", :null => false
     t.string   "perishable_token",    :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

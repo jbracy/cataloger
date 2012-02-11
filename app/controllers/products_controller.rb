@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
   end
   
   def update
+    params[:product][:category_ids] ||= []
     @product = @catalog.products.find(params[:id])
     
     if @product.update_attributes(params[:product])

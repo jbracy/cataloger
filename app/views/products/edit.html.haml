@@ -1,6 +1,6 @@
 .container_12
   .grid_9
-    = form_for @products, :url => catalog_product_path do |f|
+    = form_for @product, :url => catalog_product_path do |f|
       %h1 Edit Product<span class="arrow"></span>
       = error_messages_for(f.object, :list_messages => false)
-      = render :partial => 'form_edit', :object => f
+      = render :partial => 'form', :object => f

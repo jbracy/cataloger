@@ -1,0 +1,33 @@
+%table.product_form
+  %tr
+    %td= form.label(:name)
+    %td= form.text_field :name
+  %tr
+    %td=form.label(:sku)
+    %td=form.text_field :sku
+  %tr
+    %td=form.label(:price)
+    %td=form.text_field :price
+  %tr
+    %td=form.label :categories
+    %td.category_select
+      -for category in Category.find(:all)
+        =check_box_tag "product[category_ids][]", category.id, @product.categories.include?(category)
+        =category.name
+
+  %tr
+    %td=form.label(:image)
+    %td=form.file_field :image
+
+  - if form.object.errors[:name]
+    %tr.error_row
+      %td{:colspan => 2}= form.object.errors[:product].to_a.join(" and ")
+
+  - if form.object.new_record?
+    %tr      
+      %td{:colspan => 2}
+        %div{:style => "text-align: right; "}= form.submit "Submit"
+
+  -else
+    %tr
+      %td{:colspan => 2, :style => 'text-align: right;'}= form.submit "Submit"

@@ -21,7 +21,7 @@
         <% end %>
       </nav>
       <% if @catalog != nil%>
-        <h1><%=@catalog.title%></h1>
+        <h1><%=link_to @catalog.title, catalog_path(@catalog)%></h1>
 	  <%end%>
     </header>
     

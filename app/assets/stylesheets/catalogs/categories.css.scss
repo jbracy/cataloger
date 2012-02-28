@@ -68,6 +68,14 @@ body.categories {
 		  .p_listing{
 			float:left;
 			margin:5px;
+	
+			a{
+				text-decoration:none;
+				color: #222;
+			}
+
+			a:hover {color:#8B0000;}
+	
 			p{
 				margin-top:1px;
 				margin-bottom:1px;

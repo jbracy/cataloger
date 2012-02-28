@@ -20,7 +20,7 @@
         .products
           -@category.products.each do |p|
             %div.p_listing
-              =image_tag p.image.url(:thumb)
-              %p=p.name
+              =link_to image_tag(p.image.url(:thumb)), catalog_product_path(@catalog, p)
+              %p=link_to p.name, catalog_product_path(@catalog, p)
               %p=p.sku
-              %p=p.price
+              %p=number_to_currency(p.price, :unit => "$")

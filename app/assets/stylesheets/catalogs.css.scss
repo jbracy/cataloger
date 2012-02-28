@@ -23,7 +23,7 @@ body.catalogs {
       }
     }
 
-    ul { 
+    ul {
       list-style: none; padding: 0; font-size: 14px;
     
       a {
@@ -149,12 +149,20 @@ body.catalogs {
 	  .p_listing{
 		float:left;
 		margin:5px;
+		
+		a{
+			text-decoration:none;
+			color: #222;
+		}
+		
+		a:hover {color:#8B0000;}
+		
 		p{
 			margin-top:1px;
 			margin-bottom:1px;
 			max-width:120px;
 		  }
 		}
-    } 
+    }
   }
 }

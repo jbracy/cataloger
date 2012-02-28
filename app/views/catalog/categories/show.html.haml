@@ -3,7 +3,24 @@
     .categories
       %h3
         Categories<span class="arrow"></span>
+        = link_to "Edit", catalog_categories_path(@catalog)
+
       %ul
         - @catalog.categories.each do |category|
           %li
-            =category.name
+            =link_to category.name, catalog_category_path(@catalog,category)
+
+  .grid_9
+    .catalog
+      %h1
+        = @category.name
+
+      .category
+
+        .products
+          -@category.products.each do |p|
+            %div.p_listing
+              =image_tag p.image.url(:thumb)
+              %p=p.name
+              %p=p.sku
+              %p=p.price

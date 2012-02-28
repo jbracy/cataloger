@@ -129,12 +129,6 @@ body.catalogs {
     
     ul { 
      list-style: none; padding: 0; font-size: 14px;
-     
-     a {
-      float: right;
-      text-decoration: none;
-      color: #8B0000;
-     }
     }
 
     ul li { padding: 6px; }
@@ -149,6 +143,18 @@ body.catalogs {
     padding: 6px;
     min-height: 400px;
     
-    h1 { text-align: center; } 
+    h1 { text-align: center; }
+
+    .products {
+	  .p_listing{
+		float:left;
+		margin:5px;
+		p{
+			margin-top:1px;
+			margin-bottom:1px;
+			max-width:120px;
+		  }
+		}
+    } 
   }
 }
